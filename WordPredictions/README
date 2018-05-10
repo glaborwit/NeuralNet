@@ -1,0 +1,4 @@
+A neural network that predicts your next word.
+
+HOW IT WILL WORK:
+User will input a word and the program will output the its 3 best guesses on the word you want to use next.
