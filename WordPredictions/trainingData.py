@@ -1,3 +1,6 @@
+# Gabbi LaBorwit
+# tutorial from https://medium.com/@curiousily/making-a-predictive-keyboard-using-recurrent-neural-networks-tensorflow-for-hackers-part-v-3f238d824218
+
 import numpy as np
 
 def run(file):
@@ -48,6 +51,7 @@ def cut(text):
         next_chars += [ text[i + NUM_CHARS] ]
 
     print("Number of training examples: " + str(len(sentences)))
+    print(sentences[500], next_chars[500])
     return (NUM_CHARS, sentences, next_chars)
 
 
@@ -60,6 +64,7 @@ def generateFeatures(chars, char_indices, NUM_CHARS, sentences, next_chars):
         for indexC, char in enumerate(sent):
             X[indexS, indexC, char_indices[char]] = 1
         y[indexS, char_indices[next_chars[indexS]]] = 1
+
     return X, y
 
 
